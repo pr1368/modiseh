@@ -1,0 +1,917 @@
+<DOCTYPE html>
+<html>
+
+<head>
+<style>
+@font-face{
+	src:url("fonts/YekanBakhNoEn-Regular.ttf");
+	font-family:bakh;
+}
+body{
+	margin:0;
+	font-family:bakh;	
+	direction:rtl;
+	text-align:center;
+	color:#333;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#header{
+    /* border: 1px solid red; */
+    height: 200px;
+    
+}
+#header > .ad{
+    border: 1px solid red;
+    height: 60px;
+    width: 100%;
+}
+#header > .ad > img{
+    height: 60px;
+    width: 100%;
+}
+#header > .main{
+    /* border: 1px solid red; */
+    width:100%;
+    height: 140px;
+    display: flex;
+    flex-flow: row ;
+    gap:5px;
+    justify-content: right;
+}
+#header > .main > .right {
+    /* border: 1px solid red; */
+    width: 30%;
+    display: flex;
+    justify-content: left;
+}  
+#header > .main > .right > img{
+    width: 130px;
+    height: 70px;
+    margin-top: 30px;
+    margin-left: 10px;
+
+}
+#header > .main > .middle { 
+    width: 70%;
+    position: relative;  
+    
+}
+#header > .main > .middle > .search {
+     width: 100%;
+     display: flex;
+     margin-top: 30px;
+
+}
+#header > .main > .middle > .search > input{
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    
+}
+#header > .main > .middle > .items{ 
+    font-size: 15px;
+    color: #777;
+    display: flex;
+    justify-content:right;
+    gap: 8px;
+    text-align: right; 
+
+}
+ 
+    
+#header > .main > .middle  > .items> ul:hover > li {
+    display:inline-table;
+    
+ }
+ #header > .main > .middle >.items> ul >li {
+    
+    transition: 0.5s;
+    position: absolute;
+    background: white;
+    border: 1px solid red;
+    z-index: 999;
+    display: none;
+}
+#header > .main > .left {
+    /* border: 1px solid red; */
+    width: 30%;
+    display: flex;
+    flex-flow: row ;
+    justify-content: right;
+    margin-top: 30px;
+}
+#header > .main > .left > .minicart{
+    display: flex;
+    border-radius:12.705px ;
+    background: rgba(226, 97, 2, 1);
+    align-items: center;
+    height: 35px;
+    width: 65px;
+    font-size: 10px;
+    color: white;
+   
+   
+}
+ #header > .main > .left > .coin{
+    height: 25px;
+    width: 25px;
+    margin-right: -15px;
+    margin-top: 5px;
+   
+}
+ #header > .main > .left > .coin > img{
+    background-color: white;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+ #header > .main > .left > .bag{
+    height: 25px;
+    width: 25px;
+    margin-top: 5px;
+}
+ #header > .main > .left > .bag> img{
+    height: 100%;
+    width: 100%;
+}
+#header > .main > .left > .log{
+    display: flex;
+    width: 30px;
+
+    padding: 10px 20px 0 0;
+   text-align: left;
+   color: black;
+   font-size: 18px;  
+}
+#content{
+    /* border: 1px solid red; */
+   
+}
+#content > #slider{
+	/* border:1px solid red; */
+	height:400px;
+	position:relative;
+    direction: ltr;
+
+}
+#content > #slider > #gal{
+	width:500%;
+	height:100%;
+    transition:0.5s;
+	position:relative;
+	left:0%;
+}
+
+#content > #slider > #gal > .items{
+	width:20%;
+	height:100%;
+    float: left;
+    
+}
+#content > #slider > #gal > .items > img{
+	width:100%;
+	height:100%;
+}
+#slider> #but{
+	margin:0;
+	padding:0;
+	list-style:none;
+	height:40px;
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content:center;
+	gap:5px;
+	position:relative;
+	top:-40px;
+    right: -600px;
+    
+}
+#slider > #but > li{
+	transition:width 0.5s;
+	width:8px;
+	height:8px;
+	background:#333;
+	border-radius:50px;
+	cursor:pointer;
+}
+#slider > #but > li:hover{
+	background:#fff;
+	
+}
+#slider > #but > li.sel{
+	background:red;
+	width:35px;
+}
+#content > .mini1{
+    height: 150px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 15px; 
+}   
+#content > .mini1 > .items > img{
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+    cursor:pointer;
+}
+#content > .mini1 > .items > p{
+    color: black;
+    margin-top:5px; 
+}
+#content > #mini2{
+	border:1px solid #ccc;
+	width:950px;
+	height:300px;
+	margin:50px auto;
+	position:relative;
+	overflow:hidden;
+	
+}
+
+#content > #mini2 > #gal{
+	/* border:1px solid red; */
+	width:500%;
+	height:100%;
+
+	transition:0.5s;
+	position:relative;
+	left:0%;
+}
+
+#content > #mini2> #gal > .items{
+	width:200px;
+	height:100%;
+	float:right;
+	text-align:center;
+	direction:rtl;
+	position:relative;
+	border:1px solid #eee;
+	margin-left:10px;
+}
+
+#content > #mini2 > #gal > .items > img{
+	height:60%;
+}
+#content > #mini2 > #gal > .title > img{
+	width:100%;
+	height:100%;
+}
+
+#content > #mini2 > #gal > .items > h2{
+    font-size: 13px;
+    overflow: hidden;
+    width: 130px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#content > #mini2 > #gal > .items > .price{
+	color:green;
+}
+#content > #mini2 > #gal > .items > .off{
+	color:#fff;
+	background:red;
+	padding:10px 3px;
+	border-radius:0 0 50px 50px;
+	position:absolute;
+	top:0px;
+    left: 0px;
+}
+
+#content > #mini2 > #gal > .items > .numb{
+	color:lightcoral;
+    font-size: 12px;
+    
+}
+#content > #mini2 > #right{
+	transition:0.2s;
+
+	background: url("images/mini2/right.png") no-repeat 50%;
+	background-size:70%;
+	
+	width:50px;
+	height:70px;
+	cursor:pointer;
+	
+	position:absolute;
+	top:90px;
+	right:0;
+}
+
+#content > #mini2 > #left{
+	transition:0.2s;
+	background:url("images/mini2/left.png") no-repeat 50%;
+	background-size:70%;
+
+	width:50px;
+	height:70px;
+	cursor:pointer;	
+	
+	position:absolute;
+	top:90px;
+	left:0;
+}
+#content > .box1{
+    /* border: 1px solid red; */
+    height: 400px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+   
+}
+#content > .box1 > .right{
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 600px;
+    height: 350px; 
+   
+}
+#content > .box1 > .right > img{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;   
+}
+#content > .box1 > .left{
+    
+    border: 1px solid white;
+    width: 350px;
+    height: 350px;
+   
+}
+
+#content > .box1 > .left > .top > img{
+    border-radius: 15px;
+    width: 100%;
+    height: 48%;
+    margin-bottom: 10px;
+  
+        
+}
+#content > .box1 > .left > .bottom > img{
+    border-radius: 15px;
+    width: 100%;
+    height: 48%;    
+}
+#content > #mini3{
+	border:1px solid #ccc;
+	width:950px;
+	height:300px;
+	margin:50px auto;
+	position:relative;
+	overflow:hidden;
+	
+}
+
+#content > #mini3 > #gal{
+	/* border:1px solid red; */
+	width:500%;
+	height:100%;
+
+	transition:0.5s;
+	position:relative;
+	left:0%;
+}
+
+#content > #mini3> #gal > .items{
+   
+	width:200px;
+	height:100%;
+	float:right;
+	text-align:center;
+	direction:rtl;
+	position:relative;
+	border:1px solid #eee;
+	margin-left:10px;
+}
+
+#content > #mini3 > #gal > .items > img{
+	height:60%;
+}
+#content > #mini3 > #gal > .title > img{
+	width:100%;
+	height:100%;
+}
+
+#content > #mini3 > #gal > .items > h2{
+    font-size: 13px;
+    overflow: hidden;
+    width: 130px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#content > #mini3 > #gal > .items > .price{
+	color:green;
+}
+#content > #mini3 > #gal > .items > .off{
+	color:#fff;
+	background:red;
+	padding:10px 3px;
+	border-radius:0 0 50px 50px;
+	position:absolute;
+	top:0px;
+    left: 0px;
+}
+
+#content > #mini3 > #gal > .items > .numb{
+	color:lightcoral;
+    font-size: 12px;
+    
+}
+#content > #mini3 > #right{
+	transition:0.2s;
+
+	background: url("images/mini2/right.png") no-repeat 50%;
+	background-size:70%;
+	
+	width:50px;
+	height:70px;
+	cursor:pointer;
+	
+	position:absolute;
+	top:90px;
+	right:0;
+}
+
+#content > #mini3 > #left{
+	transition:0.2s;
+	background:url("images/mini2/left.png") no-repeat 50%;
+	background-size:70%;
+
+	width:50px;
+	height:70px;
+	cursor:pointer;	
+	
+	position:absolute;
+	top:90px;
+	left:0;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">  
+  <div class="ad"> 
+    <img src="images/20241103-desktop.gif">
+</div> 
+  <div class="main">  
+    <div class="right">
+       <img src="images/logo_003.png" > </div>
+        <div class="middle">  
+            <div class="search">  <input type="search" placeholder="جستجو کنید…"> </div>
+			<div class="items">   
+            <ul class="section"> زنانه 
+                <li class="title">  لباس زنانه </li> 
+                <li>  پالتو، کاپشن و بارانی زنانه  </li>
+                <li>  بافت و سویشرت زنانه  </li>
+                <li>  مانتو زنانه  </li> 
+                <li>  سارافون زنانه  </li>
+                <li>  شال و روسری و مقنعه  </li>
+                <li>  شلوار زنانه  </li>
+                <li>  لگ زنانه  </li>                     
+                <li>  تاپ و نیم تنه زنانه  </li>
+                <li>  تیشرت و پولوشرت زنانه  </li>
+                <li>  بلوز و تونیک زنانه  </li>
+                <li>  شومیز   </li>                     
+                <li>  شلوارک  زنانه  </li>
+                <li>  دامن   </li> 
+          
+                <li class="title">  لباس زیر و راحتی زنانه   </li>
+                <li>  سوتین زنانه  </li>
+                <li>  شورت زنانه  </li>
+                <li>  ست شورت و سوتین زنانه  </li> 
+                <li>  بادی زنانه  </li>
+                <li>  لباس راحتی زنانه  </li>
+                <li>  لباس خواب زنانه  </li>                     
+                <li>     گن زنانه  </li>
+                <li>  مایو زنانه  </li>                   
+              
+                <li class="title">  کیف و کفش زنانه </li>
+                <li>  کفش تخت و کژوال زنانه  </li>
+                <li>  کفش ورزشی   زنانه  </li>
+                <li>  کفش مجلسی و پاشنه بلند زنانه  </li> 
+                <li>  صندل و دمپایی زنانه  </li>
+                <li>  بوت و نیم بوت زنانه  </li>
+                <li>  کیف زنانه  </li>
+                <li>  کیف مجلسی زنانه  </li>                     
+                <li>  کوله پشتی زنانه  </li>
+                <li>  کیف اداری و لپ تاپ زنانه  </li>
+                <li>  ساک دستی و ساک ورزشی زنانه  </li>
+                 
+                <li class="title">  اکسسوری زنانه  </li> 
+                <li>  زیورآلات  زنانه  </li>
+                <li>  ساعت مچی  زنانه  </li>
+                <li>  عینک آفتابی زنانه  </li> 
+                <li>  کمربند  زنانه  </li>
+                <li>  کلاه، دستکش و شال گردن زنانه  </li>
+                <li>  چتر زنانه  </li>
+                <li>  جوراب و جوراب شلواری زنانه  </li>                     
+                <li>  جاکلیدی  زنانه  </li>
+                                  
+                </ul> 
+            <ul class="section"> مردانه 
+                <li class="title">  لباس مردانه </li> 
+                <li>  کت و جلیقه مردانه  </li>
+                <li>  پلیور و هودی و سویشرت مردانه  </li>
+                <li>  کاپشن و پالتو و بارانی مردانه  </li> 
+                <li>  شلوار مردانه  </li>
+                <li>  پیراهن مردانه  </li>
+                <li>  تیشرت و پلوشرت مردانه  </li>
+                <li>  شلوارک مردانه  </li>                     
+                <li>  لباس زیر مردانه  </li>
+                <li>  لباس راحتی مردانه  </li>
+                <li>  لباس مشکی مردانه  </li>                    
+                <li>  شلوار جین  مردانه  </li> 
+            
+                <li>  کیف و کفش مردانه    </li>
+                <li>  کفش  مردانه  </li>
+                <li>  کفش ورزشی  مردانه  </li>
+                <li>  صندل و دمپایی مردانه  </li>
+                <li>  بوت و نیم بوت مردانه  </li>
+                <li>  کیف  پول مردانه  </li>
+                <li>  کوله پشتی مردانه  </li>
+                <li>  کیف اداری و لپ تاپ مردانه  </li>
+         
+            </ul> 
+            <ul class="section"> بچگانه 
+                <li class="title">   دخترانه </li>
+                <li> پلیور و سویشرت دخترانه </li>
+                <li>   پالتو و کاپشن  دخترانه </li>
+                    <li>  پلوز و پیراهن دخترانه  </li> 
+                    <li>  شلوار و دامن دخترانه  </li>
+                    <li>  تاپ و تیشرت و مقنعه  </li>
+                    <li>  لباس زیر و راحتی   </li>
+                    <li>  جوراب و  جوراب شلواری  </li> 
+                    <li class="title">   پسرانه </li>
+                    <li> پلیور و ژاکت و سویشرت پسرانه </li>
+                    <li>    کاپشن  پسرانه</li>
+                        <li>    پیراهن پسرانه  </li> 
+                        <li>  شلوار و شلوارک پسرانه  </li>
+                        <li>  کیف و کفش  پسرانه  </li>
+                        <li>  تیشرت پسرانه   </li>
+                        <li>  جوراب و  جوراب شلواری  </li>                     
+                        <li>  لباس زیر و راحتی   </li>                   
+                        <li>  اکسسوری   </li>   
+                        <li>  صندل  و دمپایی پسرانه   </li>   
+                    <li class="title">   نوزادی </li>
+                    <li> بادی و سرهمی </li>
+                    <li>    ست لباس  نوزادی</li>
+                        <li>    بلوز، تاپ و  تیشرت  </li> 
+                        <li>  پلیور، سویشرت و کاپشن   </li>
+                        <li>  شلوار،   شلوارک و لباس زیر  </li>                  
+                        <li>  اکسسوری   </li>   
+                    <li class="title">   ملزومات کودک </li>
+                    <li> مراقبت از مو کودک </li>
+                    <li>     مراقبت  و بهداشت  پوست کودک </li>
+                        <li>     ایمنی کودک </li> 
+                        <li>  ظرف غذای کودک   </li>
+                        <li>  لوازم شخصی کودک و نوزاد  </li>                  
+                    <li class="title">   بازی و سرگرمی </li>
+                    <li> اسباب بازی </li>
+                    <li>   پازل و جورچین  </li>
+                        <li>     عروسک و شخصیت فکری و مهارتی </li> 
+                        <li>  کلاه گیس و تم تولد   </li>
+                        <li> جعبه کادویی و ملزومات تولد  </li>                  
+            </ul>
+            <ul class="section"> آرایشی و بهداشتی </ul> 
+            <ul class="section"> لوازم خانه </ul> 
+            <ul class="section"> سوپرمارکت </ul>
+            <ul class="section"> الکترونیک </ul> 
+            <ul class="section"> سفرو ورزش </ul> 
+            <ul class="section"> هدیه </ul> 
+            <ul class="section"> ارتباط با مدیسه </ul>                        
+        </div>
+    </div>    
+        <div class="left"> 
+            <div class="minicart">  
+             <span> مدیسو بگیر </span>   
+            </div> 
+            <div class="coin">  
+               <img src="images/coin_2.png" >
+            </div>
+            <div class="bag">  
+             <img src="images/bag.png">   
+            </div>
+            <div class="log">  
+               <span>  وارد شوید </span> 
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content">  
+		
+		<div id="slider"> 
+            <div id="gal"> 
+		
+            <div class="items"> 
+                <img src="images/slider/1.webp"> </div> 
+            <div class="items"> 
+                <img src="images/slider/2.webp"> </div>
+            <div class="items"> 
+                <img src="images/slider/3.webp"> </div>
+            <div class="items"> 
+                <img src="images/slider/4.webp"> </div>  
+            <div class="items"> 
+                <img src="images/slider/5.webp"> </div>
+        </div>
+        <ul id="but">
+            <li onclick="change(0)" class="sel">   </li>
+            <li onclick="change(1)">   </li>	
+            <li onclick="change(2)">   </li>
+            <li onclick="change(3)">   </li>		
+            <li onclick="change(4)">   </li>			
+        </ul>
+        </div>	
+		<div class="mini1">  
+            <div class="items">  
+                <img src="images/mini1/1.webp" >
+                <p> زنانه </p>  
+            </div>
+            <div class="items">  
+                <img src="images/mini1/2.webp" >
+                <p>  مردانه  </p>  
+            </div>
+            <div class="items">  
+                <img src="images/mini1/3.webp" >
+                <p>  بچگانه </p>  
+            </div>
+            <div class="items">  
+                <img src="images/mini1/4.webp" >
+                <p>  سوپرمارکت </p>  
+            </div>            
+            <div class="items">  
+                <img src="images/mini1/5.webp" >
+                <p> آرایشی و بهداشتی  </p>  
+            </div>
+            <div class="items">  
+                <img src="images/mini1/6.webp" >
+                <p>  لوازم خانه</p>  
+            </div>
+            <div class="items">  
+                <img src="images/mini1/7.webp" >
+                <p>  لوازم الکترونیک </p>  
+            </div>
+            <div class="items">  
+                <img src="images/mini1/8.webp" >
+                <p>   سفر و ورزش  </p>  
+            </div>               
+        </div>
+    
+<div id="mini2">   
+	
+	<div id="gal">	
+		
+		<div class="items title">  
+			<img src="images/mini2/title.png">			
+		</div>
+
+		<div class="items">  
+			<img src="images/mini2/1.webp">
+			<h2>  ساعت مچی مردانه عقربه ای اوماکس Omax یونیورسال کد OFM001I007  </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  45% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>
+		<div class="items">  
+			<img src="images/mini2/2.webp">
+			<h2>  
+                تی شرت زنانه ورزشی بنفش مل اند موژ Mel & Moj کد W08324-012  </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  50% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>		
+		<div class="items">  
+			<img src="images/mini2/3.webp">
+			<h2>  عطر زنانه نایس Nice مدل لاگوست پینک حجم 75ml  </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  50% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>	
+    		<div class="items">  
+			<img src="images/mini2/4.webp">
+			<h2>  ست تی شرت و شلوارک پسرانه زرشکی مادر Madar مدل فاستر  </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  35% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>
+		<div class="items">  
+			<img src="images/mini2/5.webp">
+			<h2>  عطر زنانه اسکلاره Sclaree مدل Zara Femme حجم 100ml  </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  25% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>		
+		<div class="items">  
+			<img src="images/mini2/6.webp">
+			<h2>   مانتو زنانه سفید ژیار Zhiyar کد 101800  </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  55% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>		
+		<div class="items">  
+			<img src="images/mini2/7.webp">
+			<h2>  کیف دوشی مشکی بیسراک Bisral مدل SL-498   </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  40% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>	
+    		<div class="items">  
+			<img src="images/mini2/8.webp">
+			<h2>  کاپشن مردانه کلاهدار ضد آب سرمه ای دیورسو Diverso مدل 4519 </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  30% </span>	
+            <span class="numb">   6 عدد باقی مانده </span>				
+		</div>
+		<div class="items">  
+			<img src="images/mini2/9.webp">
+			<h2> عطر مردانه هیدالو Royal Man EDP 100ml Hidalo </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  25% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>		
+		<div class="items">  
+			<img src="images/mini2/10.webp">
+			<h2> کت زنانه ژاکارد پفکی کرم مدلو Modello    </h2>
+			<span class="price">  25000 ریال </span>
+			<span class="off">  70% </span>	
+            <span class="numb"><br>   6 عدد باقی مانده </span>				
+		</div>
+	</div>
+	
+	<div id="right">	</div>	
+	<div id="left">  	</div>	
+
+</div>
+
+		<div class="box1">  
+            <div class=" right"> 
+                <img src="images/box1/1.webp"></div>	
+                
+             <div class="left" >   
+            <div class="top"> 
+                <img src="images/box1/2.webp"> 	</div>     
+            <div class="bottom"> 
+                <img src="images/box1/3.webp"> 	</div> 
+            </div>
+        
+        </div>	
+        <div id="mini3">   
+	
+            <div id="gal">	
+                
+                <div class="items title">  
+                    <img src="images/mini2/title.png">			
+                </div>
+        
+                <div class="items">  
+                    <img src="images/mini2/1.webp">
+                    <h2>  ساعت مچی مردانه عقربه ای اوماکس Omax یونیورسال کد OFM001I007  </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  45% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>
+                <div class="items">  
+                    <img src="images/mini2/2.webp">
+                    <h2>  
+                        تی شرت زنانه ورزشی بنفش مل اند موژ Mel & Moj کد W08324-012  </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  50% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>		
+                <div class="items">  
+                    <img src="images/mini2/3.webp">
+                    <h2>  عطر زنانه نایس Nice مدل لاگوست پینک حجم 75ml  </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  50% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>	
+                    <div class="items">  
+                    <img src="images/mini2/4.webp">
+                    <h2>  ست تی شرت و شلوارک پسرانه زرشکی مادر Madar مدل فاستر  </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  35% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>
+                <div class="items">  
+                    <img src="images/mini2/5.webp">
+                    <h2>  عطر زنانه اسکلاره Sclaree مدل Zara Femme حجم 100ml  </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  25% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>		
+                <div class="items">  
+                    <img src="images/mini2/6.webp">
+                    <h2>   مانتو زنانه سفید ژیار Zhiyar کد 101800  </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  55% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>		
+                <div class="items">  
+                    <img src="images/mini2/7.webp">
+                    <h2>  کیف دوشی مشکی بیسراک Bisral مدل SL-498   </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  40% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>	
+                    <div class="items">  
+                    <img src="images/mini2/8.webp">
+                    <h2>  کاپشن مردانه کلاهدار ضد آب سرمه ای دیورسو Diverso مدل 4519 </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  30% </span>	
+                    <span class="numb">   6 عدد باقی مانده </span>				
+                </div>
+                <div class="items">  
+                    <img src="images/mini2/9.webp">
+                    <h2> عطر مردانه هیدالو Royal Man EDP 100ml Hidalo </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  25% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>		
+                <div class="items">  
+                    <img src="images/mini2/10.webp">
+                    <h2> کت زنانه ژاکارد پفکی کرم مدلو Modello    </h2>
+                    <span class="price">  25000 ریال </span>
+                    <span class="off">  70% </span>	
+                    <span class="numb"><br>   6 عدد باقی مانده </span>				
+                </div>
+            </div>
+            
+            <div id="right">	</div>	
+            <div id="left">  	</div>	
+        
+        </div>	
+
+</div>
+<div id="footer">   </div>
+
+<script>
+
+    var pos = 0;
+    
+    
+    var buts = document.querySelectorAll("#but > li");
+    
+    function change(num){
+    
+        /*  move slider  */
+        
+            move(num);
+        
+        /*  change tab  */
+        
+            changeTab(num)
+    }
+    
+    function move(num){
+        pos = -100*num;
+        gal.style.left = pos + "%";	
+    }
+    
+    function changeTab(num){
+        
+        for(i=0; i < buts.length;i++ ){
+            
+            buts[i].className = ""; 
+        }
+        
+            buts[num].className = "sel";	
+    }
+    
+    
+    right.onclick = function(){
+    
+        if(pos > -400){
+            pos = pos - 100;
+            gal.style.left = pos + "%";
+        }
+        else if(pos == -400){
+            pos = 0;
+            gal.style.left = pos + "%";	
+        }
+        
+        
+        changeTab(pos/-100);
+    }
+    
+    
+    left.onclick = function(){
+    
+        if(pos < 0){
+            pos = pos + 100;
+            gal.style.left = pos + "%";
+        }
+        
+        
+        changeTab(pos/-100);
+    }
+    
+    
+    </script>
+
+</body>
+</html>
